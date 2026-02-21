@@ -1,1 +1,112 @@
-React JS
+React JS:
+========
+
+Summary
+-Features of React
+  Virtual DOM [DOM, Shadow DOM, Virtual DOM]
+  Modular
+  Loosely Coupled & Extensible
+  Component Based
+-Issues with React  
+===========================================
+Day-3:
+=====
+Setup Environment for React:
+1. PC have OS windows 8x (Higher)
+2. Download and install Node JS on your PC.(18+ version)
+	https://nodejs.org/en downlaod and run
+	-Node js required to build servers, web apps, scripts & command line tools.
+	-Its provides a package manager called NPM.
+	[yarn, Bower, Grunt, Compse, Ruby Gems, NuGet]
+	https://getbootstrap.com/docs -- Bootstrap
+	
+3. Check the version of Node & NPM from command prompt
+	C:\>node -v
+	C:\> npm -v
+	Note: node version 18x +
+	npm version 8x + 
+
+4. downlaod and install "Visual Studio Code" editor.
+	
+5. Add Extensions to VS code editor
+	- Live servers
+	- VS-code icons
+	- IntelliSense for CSS class names in HTML
+
+Create a new Web Application:
+1. Create new folder for your project
+		D:\web-Application 
+2. Open your folder in VS studio folder
+3. Set up file system for web app 
+  open terminal run npm init -y --> packeage.json 
+   a) Generate packeage.json
+   -open  Terminal and run the command 
+   > npm init -y 
+   -packeage.json  comprises of project metadata.
+   
+   b) add README.md into project 
+   
+   c) Adding .gitignore file - required pushing into git and ignoring some specific file 
+   
+   d) Add Folgers 
+		-public  : It comprises of static resource(html,images, docs)
+		-src 	 : It Component of dynamic resources(.css,.js,.ts,.scss..)
+		- public>index.html 
+   e) add following pages into public folder 
+       - index.html 
+	   - home.html 
+	   
+   Note: codeproject.com --> all project 
+
+Setup React for your Web Application:
+
+1. Setup libray using CDN for lagacy React(upto 17x).
+   - React in page required follwing libraries
+    a) React   (core Library)
+	b) React DOM (Virtual DOM Library)
+    c) Babel (Compiler)
+	
+  - React Libraies (CDN file ) https://legacy.reactjs.org
+  -https://legacy.reactjs.org/docs/cdn-links.html
+  
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  - Babel libraries (Babel https://babeljs.io )
+  -https://babeljs.io/docs/babel-standalone 
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  put all above into home page in head section 
+  
+2. Java Script Enable or not 
+	<noscript>Please enable JavaScript on your browser</noscript>
+
+3. Adding few code 
+#home.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <Script type="text/babel">
+        ReactDOM.render(
+            <h1>Welcome to React</h1>,
+            document.getElementById('root')
+        );
+    </Script>
+</head>
+<body>
+    <h2>Home Page</h2>
+    <noscript>Please enable JavaScript on your browser</noscript>
+    <div id="root"></div>
+</body>
+</html>
+			
+===========================================
+Day-4:
+======
+===========================================
