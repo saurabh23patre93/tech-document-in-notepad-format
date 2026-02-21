@@ -109,4 +109,278 @@ Setup React for your Web Application:
 ===========================================
 Day-4:
 ======
+How to use react in existing web application?
+1) Install Node JS
+2) VS Code
+3) Create a Project 
+4) Setup file system for project 
+5) Enable React in page using CDN (Problem every time need to connect with Internet)
+	1) React 
+	2) React DOM 
+	3) Babel 
+
+Install React & Babal Library for Project:
+ 1) Run the following commands in your project terminal 
+   > npm i react react-dom @babel/standlone --save (latest - 19)
+  
+ 2) All Libraies  files are copied into node_modules
+ 3) Check version for react and react-dom 
+  >npm i react@18.2 react-dom@18.2 @babel/standalone --save
+ 4) Moduler system in java script 
+  cjs--> module system is CMD 
+  YOur web app requies react libraries from UMD [Universal module Distribution] system 
+  5) Linke library file to your HTML pate
+   <head> 
+   <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.min.js"></script>
+
+Home.html 
+	
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.min.js"></script>
+    <Script type="text/babel">
+        ReactDOM.render(
+            <h1>Welcome to React</h1>,
+            document.getElementById('root')
+        );
+    </Script>
+</head>
+<body>
+    <h2>Home Page</h2>
+    <noscript>Please enable JavaScript on your browser</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+	6) Component [input-group ,carousel, cards, Accordion]
+	Design --> Header Component, 
+Q. What is reactDOM? 
+Ans: Its a propery that create Virtual DOM and render() is method that renders virtual DOM into actual DOM .
+Syntax:
+ ReactDOM.render(<Your_component> , dom_target_element);
+ 
+React Components::
+=================
+-Component is template with pre-defined design, styles and functionality 
+-design is create using HTML 
+- Styles are configure using CSS 
+- functionality is defined by using JavaScript/TypeScript 
+- React uses javaScript extenstion known as JSX
+- React component can be created by using 2 techniques 
+ a) JavaScript class 
+ b) JavaScript Function 
+
+JavaScript Function Topics: (70 % javaScrip 30% react Quesiton in interview)
+- Function Declaration 
+- Function Expression 
+- Function Definition 
+- Function Parameters 
+- Rest Parameters 
+- Spread Operator 
+- Function Closure 
+- Function Return 
+- Function Currying 
+- Higher Order Functions 
+- Function Recursion 
+- Function Signature 
+- Function Generator
+- Function Call back 
+- Function Promise 
+- Async Function
+- Anonymous Function
+- IIFE Pattern 
+- Arrow Function
+ 
+
+Function Component Rules:
+1) A component function cant be void
+2) ITs must return JSX element 
+3) Its must start with Uppercase letter 
+4) Component JSX must return only one fragment 
+5) Every element in component must have an end token 
+	<img></img> 
+
+Function Declaration and function Expression -- in Java Script need to learn 
+
+Home.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <style>
+        form {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(24, 18, 18, 0.3);
+            width: 300px;
+            margin: 20px auto;
+        }
+    </style>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.min.js"></script>
+    <Script type="text/babel">
+
+        function Login() {
+            return (
+                <form>
+                    <h1>Login Page</h1>
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input type="text" name="username" /></dd>
+                        <dt>Password</dt>
+                        <dd><input type="password" name="password" /></dd>
+                    </dl>
+                </form>
+            );
+        }
+        ReactDOM.render(
+            <main>
+                <Login/>
+                <br/>
+                <Login/>
+                </main>,
+            document.getElementById('root')
+        );
+    </Script>
+</head>
+<body>
+    <h2>Home Page</h2>
+    <noscript>Please enable JavaScript on your browser</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+
+Syntax:
+ function COmponent()
+	{
+	 return ( 
+			<fragment></>
+			);
+	}
+	Component is access and used and token <COmponent/>
+	
+Multi component :
+Home.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <style>
+        form {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(24, 18, 18, 0.3);
+            width: 300px;
+            margin: 20px auto;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #bdb2b2;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #9f8a8a;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.min.js"></script>
+    <Script type="text/babel">
+
+        function Login() {
+            return (
+                <form>
+                    <h1>Login Page</h1>
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input type="text" name="username" /></dd>
+                        <dt>Password</dt>
+                        <dd><input type="password" name="password" /></dd>
+                    </dl>
+                </form>
+            );
+        }
+
+        const Navbar = () => {
+            return (
+                <nav>
+                    <a href="./index.html">Index</a> | 
+                    <a href="./home.html">Home</a>
+                    <div>Netflix</div>
+                    <div>
+                        <SearchBar />
+                    </div>
+                    <select>
+                        <option value="en">English</option>
+                        <option value="ko">Korean</option>
+                    </select>
+                    <button>Sign In</button>
+                </nav>
+            );
+        }
+        const SearchBar = () => {
+            return (
+                <div>
+                    <input type="text" placeholder="Search..." />
+                    <button>Search</button>
+                </div>
+            );
+        }
+        function Footer() {
+            return (
+                <footer>
+                    <p>&copy; 2024 Netflix, Inc.</p>
+                </footer>
+            );
+        }
+
+        ReactDOM.render(
+            <main> <Navbar/>
+                <Login/>
+                <Footer/>
+                </main>,
+            document.getElementById('root')
+        );
+    </Script>
+</head>
+<body>
+    <h2>Home Page</h2>
+    <noscript>Please enable JavaScript on your browser</noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+	
+===========================================
+Day: 05
+=======
+
+===========================================
+===========================================
+===========================================
 ===========================================
